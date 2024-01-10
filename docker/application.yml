@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: AWT Native Test Application in a Docker Image
+
+video: file:/var/app/big-buck-bunny_trailer.webm

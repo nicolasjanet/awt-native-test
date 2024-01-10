@@ -1,0 +1,7 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+
+video: classpath:big-buck-bunny_trailer.webm

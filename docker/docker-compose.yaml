@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  awt-native-test:
+    image: docker-vialink.vialink.local/awt-native-test
+    volumes:
+      - ./application.yml:/var/app/application.yml
+    environment:
+      - "SPRING_CONFIG_ADDITIONAL-LOCATION=/var/app/application.yml"
+    ports:
+      - 8081:8080
+  awt-native-test-custom:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: docker-vialink.vialink.local/awt-native-test-custom
+    volumes:
+      - ./application.yml:/var/app/application.yml
+      - ../src/main/resources/big-buck-bunny_trailer.webm:/var/app/big-buck-bunny_trailer.webm
+    environment:
+      - "SPRING_CONFIG_ADDITIONAL-LOCATION=/var/app/application.yml"
+    ports:
+      - 8082:8080
